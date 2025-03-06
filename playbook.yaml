@@ -1,0 +1,23 @@
+---
+- name: Install and Start nginx
+  hosts: all
+  become: true
+
+  tasks:
+   - name: Update packages
+     # shell: apt update
+     apt:
+      update_cache: yes
+   - name: Install nginx
+     # shell: apt install nginx
+     # Use specific modules
+     # Like apt module in this case
+     apt:
+       name: nginx
+       state: present
+   - name: Start nginx
+     # shell: systemctl start nginx
+     # service module in this case
+     service:
+       name: nginx
+       state: started

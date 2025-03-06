@@ -1,0 +1,5 @@
+[test]
+vagrant@vm02
+
+[check]
+vagrant@vm03
